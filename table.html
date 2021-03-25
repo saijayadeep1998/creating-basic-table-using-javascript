@@ -1,0 +1,82 @@
+<html>
+    <body>
+
+         <table id="table" border="1" width="100%">
+
+         </table>
+
+        <script>
+
+var employees= [
+{
+    name:"ravi",
+    eid:101,
+    address: "hyderabad",
+    project:"lms",
+    client:"abc"
+},
+{
+    name:"kiran",
+    eid:102,
+    address: "secunderabad",
+    project:"crm",
+    client:"abc"
+},
+{
+    name:"rajesh",
+    eid:103,
+    address: "secunderbad",
+    project:"crm",
+    client:"abc"
+},
+{
+    name:"rajesh",
+    eid:103,
+    address: "secunderbad",
+    project:"crm",
+    client:"abc"
+}
+]
+
+var table=document.getElementById("table");
+
+
+ var employee=employees[0];
+
+ //console.log(employee);
+
+  var keys=Object.keys(employee);
+  //console.log(keys);
+
+  var allThs="";
+
+   for(var i=0;i<keys.length;i++){
+      allThs= allThs+ "<th>"+ keys[i] +"</th>";
+   }
+   var theader="<tr>" + allThs + "</tr>";
+
+   //console.log(theader);
+
+ 
+
+   var tbody="";
+
+    for(var i=0;i<employees.length;i++){
+        var emp= employees[i];
+        var tablerow="<tr>";
+         for(var j=0;j<keys.length;j++){
+           tablerow=tablerow+"<td>"+emp[keys[j]]+"</td>";
+         }
+         tablerow=tablerow+"</tr>";
+         //console.log(tablerow);
+         tbody=tbody+tablerow;
+    }
+    
+     tdata=theader+tbody;
+     table.innerHTML=tdata;
+
+
+            
+         </script>
+    </body>
+</html>
